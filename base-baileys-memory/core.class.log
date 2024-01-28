@@ -2,26 +2,26 @@
   key: {
     remoteJid: '34633418471@s.whatsapp.net',
     fromMe: false,
-    id: '3AB5ED999942B03AB273',
+    id: '3A6C3DB367484FE2DEA7',
     participant: undefined
   },
-  messageTimestamp: 1706433532,
+  messageTimestamp: 1706439207,
   pushName: 'lauri',
   broadcast: false,
   message: Message {
-    conversation: 'Holaaaa',
+    conversation: 'Hola',
     messageContextInfo: MessageContextInfo {
       deviceListMetadata: [DeviceListMetadata],
       deviceListMetadataVersion: 2
     }
   },
-  body: 'Holaaaa',
+  body: 'Hola',
   from: '34633418471'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_ac09ff34-613b-4633-9706-52ca659f02b4',
-  keyword: 'key_2c5288ae-9cde-4224-b532-19f3782590c5',
-  answer: '🙌 Hola bienvenido a este *Chatbot*',
+  ref: 'ans_658b14c3-a5ba-404c-b313-f56abbe1eccc',
+  keyword: 'key_01b506ee-99f9-488a-96c3-5e17d8f58514',
+  answer: '🙌 Hola, bienvenido a *Captain Tattoo*',
   options: {
     media: null,
     buttons: [],
@@ -34,15 +34,15 @@
     keyword: {},
     callback: false
   },
-  refSerialize: '00aae82c6cd73b5b1dd2cdc21fa9a36a'
+  refSerialize: 'a3686725bf2f719bb7066dadfb3959a2'
 }
 [QUEUE_SE_ENVIO]:  {
-  ref: 'ans_59acefdb-ef17-40af-b009-bfa252635796',
-  keyword: 'ans_ac09ff34-613b-4633-9706-52ca659f02b4',
-  answer: 'te comparto los siguientes links de interes sobre el proyecto\n' +
-    '👉 *doc* para ver la documentación\n' +
-    '👉 *gracias*  para ver la lista de videos\n' +
-    '👉 *discord* unirte al discord',
+  ref: 'ans_8da6f93c-c4dc-4587-8afe-5248e1bd0948',
+  keyword: 'ans_658b14c3-a5ba-404c-b313-f56abbe1eccc',
+  answer: '¿Te gustaría hacer una reserva para un tatuaje?\n' +
+    '👉 *Si* Comenzar con la reserva \n' +
+    '👉 *Citas* para programar una cita\n' +
+    '👉 *Ubicación* para conocer nuestra dirección',
   options: {
     media: null,
     buttons: [],
@@ -51,14 +51,48 @@
     delay: 0,
     idle: null,
     ref: null,
-    nested: [
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object],
-      [Object], [Object]
-    ],
+    nested: [ [Object], [Object], [Object], [Object], [Object], [Object] ],
     keyword: {},
     callback: false
   },
-  refSerialize: 'e6d892f173df9db9bec723fd3225a7b8'
+  refSerialize: 'feeca4f1425dbeb4cbba60b84bbf630c'
+}
+[handleMsg]:  {
+  key: {
+    remoteJid: '34633418471@s.whatsapp.net',
+    fromMe: false,
+    id: '3AC74BB3B4C4EB24C541',
+    participant: undefined
+  },
+  messageTimestamp: 1706439209,
+  pushName: 'lauri',
+  broadcast: false,
+  message: Message {
+    conversation: 'Si',
+    messageContextInfo: MessageContextInfo {
+      deviceListMetadata: [DeviceListMetadata],
+      deviceListMetadataVersion: 2
+    }
+  },
+  body: 'Si',
+  from: '34633418471'
+}
+[QUEUE_SE_ENVIO]:  {
+  ref: 'ans_34657a5e-33ee-4bbd-9f9d-f8f2261fdead',
+  keyword: 'key_80bbb5f2-08ae-427f-9b76-314330ea930d',
+  answer: 'Comencemos con la reserva entonces ¿Cuáles son las medidas que quieres para el tatuaje?\n' +
+    '[object Object]',
+  options: {
+    media: null,
+    buttons: [],
+    capture: false,
+    child: null,
+    delay: 0,
+    idle: null,
+    ref: null,
+    nested: [],
+    keyword: {},
+    callback: false
+  },
+  refSerialize: 'c347326848f030037397b3659a7e581d'
 }

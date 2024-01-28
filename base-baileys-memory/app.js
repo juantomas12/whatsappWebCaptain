@@ -4,6 +4,12 @@ const QRPortalWeb = require('@bot-whatsapp/portal');
 const BaileysProvider = require('@bot-whatsapp/provider/baileys');
 const MockAdapter = require('@bot-whatsapp/database/mock');
 
+const flowGracias = addKeyword(['gracias', 'vale', 'nos vemos']).addAnswer([
+    'Muchas gracias por todo! Nos vemos pronto.'
+]);
+const flowConfirmacion = addKeyword(['1-3cm', '4-7cm', '10-20cm', 'Mas grande']).addAnswer([
+    'Muy bien! mándanos una foto de tu tatuaje para poder concertar la cita',
+], [flowGracias]);
 const flowCitas = addKeyword(['citas', 'reserva']).addAnswer(
     [
         '🗓️ Para programar una cita, necesitamos algunos detalles adicionales:',
@@ -16,6 +22,9 @@ const flowCitas = addKeyword(['citas', 'reserva']).addAnswer(
     [flowConfirmacion]
 );
 
+
+
+
 const flowUbicacion = addKeyword(['ubicacion', 'dirección']).addAnswer(
     [
         '📍 Nuestra tienda está ubicada en:',
@@ -27,20 +36,11 @@ const flowUbicacion = addKeyword(['ubicacion', 'dirección']).addAnswer(
     [flowGracias]
 );
 
-const flowGracias = addKeyword(['gracias', 'vale', 'nos vemos']).addAnswer([
-    'Muchas gracias por todo! Nos vemos pronto.'
-]);
-
-const flowConfirmacion = addKeyword(['1-3cm', '4-7cm', '10-20cm', 'Mas grande']).addAnswer([
-    'Muy bien! mándanos una foto de tu tatuaje para poder concertar la cita',
-], [flowCitas]);
-
 const flowSi = addKeyword(['si', 'claro', 'venga']).addAnswer(
     [
-        'Comencemos con la reserva entonces.',
-        '¿Cuáles son las medidas que quieres para el tatuaje?',
+        'Comencemos con la reserva entonces ¿Cuáles son las medidas que quieres para el tatuaje?',
         {
-            buttons: [
+            buttons:[
                 { body: '1-3cm' },
                 { body: '4-7cm' },
                 { body: '10-20cm' },
@@ -48,8 +48,6 @@ const flowSi = addKeyword(['si', 'claro', 'venga']).addAnswer(
             ]
         }
     ],
-    null,
-    null,
     [flowConfirmacion]
 );
 
@@ -64,12 +62,12 @@ const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
         ],
         null,
         null,
-        [flowSi, flowEstilos, flowCitas, flowUbicacion]
+        [flowSi, flowCitas, flowUbicacion]
     );
 
 const main = async () => {
     const adapterDB = new MockAdapter();
-    const adapterFlow = createFlow([flowPrincipal]);
+    const adapterFlow = createFlow([flowPrincipal, flowSi]);
     const adapterProvider = createProvider(BaileysProvider);
 
     createBot({
